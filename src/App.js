@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import Header from './components/Header';
+import Login from './components/Login';
+import Translator from './components/Translator';
+import Profile from './components/Profile';
+
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
+  const [userName, setUserName] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const onChangeUserName = (event) => {
+    setUserName(event.target.value)
+  }
+
+  const handleSubmit = () => {
+    setLoggedIn(true);
+  }
+
+  const logOut = () => {
+    setLoggedIn(false);
+    setUserName("");
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Header userName={userName} loggedIn={loggedIn} logOut={logOut}/>
+        <Switch>
+          <Route exact path="/">
+            <Login userName={userName} onChangeUserName={onChangeUserName} submit={handleSubmit}/>
+          </Route>
+          <Route path="/translator">
+            <Translator />
+          </Route>
+          <Route path="/profile">
+            <Profile />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
