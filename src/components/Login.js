@@ -6,7 +6,7 @@ function Login({userName, onChangeUserName, submit}) {
             <h2>Lost in translation</h2>
             <h3>Get started</h3>
                 <input value={userName} onChange={onChangeUserName} placeholder="What's your name?"/>
-                <Link to="/translator">
+                <Link to="/">
                     <button onClick={submit}>Arrow</button>
                 </Link>
         </div>

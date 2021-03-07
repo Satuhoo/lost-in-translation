@@ -4,6 +4,7 @@ import Login from './components/Login';
 import Translator from './components/Translator';
 import Profile from './components/Profile';
 import {storage} from './utils/storage';
+import PrivateRoute from './components/hoc/PrivateRoute';
 
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -36,15 +37,15 @@ function App() {
       <Router>
         <Header userName={shownUserName}/>
         <Switch>
-          <Route exact path="/">
+          <PrivateRoute exact path="/">
+            <Translator />
+          </PrivateRoute>
+          <Route path="/Login">
             <Login userName={userName} onChangeUserName={onChangeUserName} submit={handleSubmit}/>
           </Route>
-          <Route path="/translator">
-            <Translator />
-          </Route>
-          <Route path="/profile">
+          <PrivateRoute path="/profile">
             <Profile logOut={logOut}/>
-          </Route>
+          </PrivateRoute>
         </Switch>
       </Router>
     </div>
