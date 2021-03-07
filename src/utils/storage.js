@@ -1,7 +1,7 @@
 const storage = window.localStorage;
 
 const addToStorage = (inputWord) => {
-    let storedTranslations = JSON.parse(storage.getItem("translations"));
+    let storedTranslations = fetchTranslations();
     if (storedTranslations === null) {
         storedTranslations = [];
     }
@@ -14,4 +14,9 @@ const addToStorage = (inputWord) => {
     console.log(storedTranslations)
 }
 
-export {storage, addToStorage};
+const fetchTranslations = () => {
+    let storedTranslations = JSON.parse(storage.getItem("translations"));
+    return storedTranslations;
+}
+
+export {storage, addToStorage, fetchTranslations};

@@ -1,5 +1,7 @@
 import { useState } from "react";
-import {addToStorage} from '../utils/LocalStorage';
+import {addToStorage} from '../utils/storage';
+import translate from '../utils/translate';
+import {Signs} from './signs/Signs';
 
 function Translator() {
     const [inputWord, setInputWord] = useState("");
@@ -9,26 +11,20 @@ function Translator() {
         setInputWord(event.target.value);
     }
 
-    const translate = (event) => {
+    const handleTranslate = (event) => {
         event.preventDefault();
         addToStorage(inputWord);
-        let characters = inputWord.toLowerCase().split("");
-        let signs = [];
-        for (let char in characters) {
-            signs.push(require(`../assets/individial_signs/${characters[char]}.png`).default)
-        }
+        let signs = translate(inputWord);
         setTranslation(signs);
     }
 
     return (
         <div>
-            <form onSubmit={translate}>
+            <form onSubmit={handleTranslate}>
                 <input value={inputWord} onChange={handleInputChange} placeholder="Type what you want to translate"></input>
                 <button type="submit">Translate</button>
             </form>
-            <div>
-            {translation.map((sign, index) => <img key={index} src={sign} alt="img" />)}
-            </div>
+            <Signs translation={translation}/>
         </div>
     )
 }

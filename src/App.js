@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Login from './components/Login';
 import Translator from './components/Translator';
 import Profile from './components/Profile';
-import {storage} from './utils/LocalStorage';
+import {storage} from './utils/storage';
 
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
