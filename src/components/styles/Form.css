@@ -1,0 +1,36 @@
+form {
+    display: flex;
+    padding: 0px 10px 0px 10px;
+    background-color: #EFEFEF;
+    width: 400px;
+    border: 3px solid #969696;
+    border-radius: 30px;
+    justify-content: space-between;
+}
+
+input {
+    padding:20px;
+    background-color:#EFEFEF;
+    border: none;
+    width: 350px;
+    outline:none;
+}
+
+.icon-keyboard {
+    padding-top: 15px;
+    font-size: 30px;
+}
+
+.icon-arrow {
+    font-size: 30px;
+}
+
+.submit-btn {
+    background-color: #845EC2;
+    width: 50px;
+    height: 50px;
+    color: white;
+    margin: 5px 0px 5px 0px;
+    border-radius: 25px;
+    outline: none;
+}

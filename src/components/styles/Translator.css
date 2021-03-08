@@ -9,14 +9,11 @@
     text-align: center;
 }
 
-.input-form {
-    padding: 40px;
+.form-container-translator {
+    display: flex;
+    justify-content: center;
     background-color: #FFC75F;
-}
-
-input {
-    padding: 20px 40px 20px 40px;
-    font-family: 'Sanchez', serif;
+    padding: 30px;
 }
 
 .translation-box {

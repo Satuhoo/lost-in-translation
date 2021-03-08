@@ -3,6 +3,7 @@ import {addToStorage} from '../utils/storage';
 import translate from '../utils/translate';
 import {Signs} from './signs/Signs';
 import './styles/Translator.css';
+import Form from './forms/Form';
 
 function Translator() {
     const [inputWord, setInputWord] = useState("");
@@ -21,11 +22,10 @@ function Translator() {
 
     return (
         <div className="translator">
-            <form className="input-form" onSubmit={handleTranslate}>
-                    <input value={inputWord} onChange={handleInputChange} maxLength={40}
-                    placeholder="Type what you want to translate"></input>
-                    <button type="submit">Translate</button>
-            </form>
+            <div className="form-container-translator">
+            <Form value={inputWord} handleChangeValue={handleInputChange} placeholder="Type what you want to translate"
+                submit={handleTranslate}/>
+            </div>
             <div className="translator-box-container">
                 <Signs translation={translation}/>
             </div>

@@ -1,6 +1,6 @@
-import {Link} from "react-router-dom";
 import './styles/Login.css';
 import logo from '../assets/Logo.png';
+import Form from './forms/Form';
 
 function Login({userName, onChangeUserName, submit}) {
     return (
@@ -12,11 +12,8 @@ function Login({userName, onChangeUserName, submit}) {
                     <h2>Get started</h2>
                 </div>
             </div>
-            <div className="username-field">
-                <input value={userName} onChange={onChangeUserName} placeholder="What's your name?"/>
-                <Link to="/">
-                    <button onClick={submit}>Arrow</button>
-                </Link>
+            <div className="form-container">
+                <Form path="/" value={userName} handleChangeValue={onChangeUserName} placeholder="What's your name?" submit={submit}/>
             </div>
         </div>
     )
