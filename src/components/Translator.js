@@ -2,6 +2,7 @@ import { useState } from "react";
 import {addToStorage} from '../utils/storage';
 import translate from '../utils/translate';
 import {Signs} from './signs/Signs';
+import './styles/Translator.css';
 
 function Translator() {
     const [inputWord, setInputWord] = useState("");
@@ -19,12 +20,14 @@ function Translator() {
     }
 
     return (
-        <div>
-            <form onSubmit={handleTranslate}>
-                <input value={inputWord} onChange={handleInputChange} placeholder="Type what you want to translate"></input>
-                <button type="submit">Translate</button>
+        <div className="translator">
+            <form className="input-form" onSubmit={handleTranslate}>
+                    <input value={inputWord} onChange={handleInputChange} placeholder="Type what you want to translate"></input>
+                    <button type="submit">Translate</button>
             </form>
-            <Signs translation={translation}/>
+            <div className="translator-box-container">
+                <Signs translation={translation}/>
+            </div>
         </div>
     )
 }

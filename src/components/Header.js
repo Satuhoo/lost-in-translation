@@ -1,12 +1,14 @@
 import './styles/Header.css';
 import { Link } from 'react-router-dom';
+import logo from '../assets/Logo.png';
 
 function Header({userName}) {
     return(
         <div className="header">
-            <h1>Lost in Translation</h1>
-            <div>
-            {userName && <Link to="/profile"><p>Hello {userName}</p></Link>}
+            {userName && <img className="logo" src={logo} alt="logo"/>}
+            <Link className="link" to="/"><h3>Lost in Translation</h3></Link>
+            <div className="user">
+            {userName && <Link className="link" to="/profile"><p className="userName">{userName}</p></Link>}
             </div>
         </div>
     )

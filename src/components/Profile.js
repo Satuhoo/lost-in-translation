@@ -2,6 +2,8 @@ import {Link} from "react-router-dom";
 import translate from "../utils/translate";
 import {fetchTranslations} from '../utils/storage';
 import {SignsWithInput} from './signs/Signs';
+import './styles/Profile.css';
+import logoHello from '../assets/Logo-Hello.png';
 
 function Profile({logOut}) {
     let storedInputs = fetchTranslations();
@@ -23,10 +25,17 @@ function Profile({logOut}) {
 
     return (
         <div>
-            <h1>Profile</h1>
-            <p>Your last translations</p>
-            {translations.map((translation, index) => <SignsWithInput key={index} translation={translation}/>)}
-            <Link to="/"><button onClick={logOut}>LogOut</button></Link>
+            <div className="profile-flex-container">
+                <div>
+                    <h1>Profile</h1>
+                    <Link to="/"><button className="logout-btn" onClick={logOut}>Log out</button></Link>
+                </div>
+            <img className="logo-hello" src={logoHello} alt="logo"/>
+            </div>
+            <p className="latest-translations-title">Your latest translations</p> 
+            <div>
+                {translations.map((translation, index) => <SignsWithInput key={index} translation={translation}/>)}
+            </div>
         </div>
     )
 }
