@@ -20,11 +20,15 @@ input {
 }
 
 .translation-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 800px;
     height: 300px;
     border: 1px solid black;
     border-radius: 30px;
     margin-top: 30px;
+    padding: 20px;
     box-shadow: 5px 10px 8px #888888;
 }
 
