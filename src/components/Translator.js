@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {addToStorage} from '../utils/storage';
 import translate from '../utils/translate';
-import {Signs} from './signs/Signs';
+import {Translation} from './translations/Translations';
 import './styles/Translator.css';
 import Form from './forms/Form';
 
@@ -13,6 +13,7 @@ function Translator() {
         setInputWord(event.target.value);
     }
 
+    //Checks if the input word is not empty string, saves it to storage and calls translate method
     const handleTranslate = (event) => {
         event.preventDefault();
         if (inputWord !== "") {
@@ -30,7 +31,7 @@ function Translator() {
                 submit={handleTranslate} path="#"/>
             </div>
             <div className="translator-box-container">
-                <Signs translation={translation}/>
+                <Translation translation={translation}/>
             </div>
         </div>
     )

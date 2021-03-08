@@ -1,3 +1,5 @@
+//Checks if the path to image is not empty and returns sign image. 
+//If path is empty, returns empty space between signs.
 const Sign = ({sign, className}) => {
     return(
         <div>

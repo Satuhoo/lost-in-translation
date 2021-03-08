@@ -14,6 +14,7 @@ input {
     border: none;
     width: 350px;
     outline:none;
+    font-family: 'Sanchez', serif;
 }
 
 .icon-keyboard {

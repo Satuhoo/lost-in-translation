@@ -1,15 +1,16 @@
 import {Link} from "react-router-dom";
 import translate from "../utils/translate";
 import {fetchTranslations} from '../utils/storage';
-import {SignsWithInput} from './signs/Signs';
+import {TranslationWithWord} from './translations/Translations';
 import './styles/Profile.css';
 import logoHello from '../assets/Logo-Hello.png';
 
 function Profile({logOut}) {
-    let storedInputs = fetchTranslations();
+    let storedInputs = fetchTranslations(); //Calls the method which fetchs translations from local storage
     
     const showLatestTranslations = () => {
         let storedTranslations = [];
+        //Iterates the list of stored input words, translates them and saves to the list
         for (let input in storedInputs) {
             let signs = translate(storedInputs[input]);
             const translation = {
@@ -34,7 +35,7 @@ function Profile({logOut}) {
             </div>
             <p className="latest-translations-title">Your latest translations</p> 
             <div>
-                {translations.map((translation, index) => <SignsWithInput key={index} translation={translation}/>)}
+                {translations.map((translation, index) => <TranslationWithWord key={index} translation={translation}/>)}
             </div>
         </div>
     )

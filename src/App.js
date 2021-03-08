@@ -5,12 +5,10 @@ import Translator from './components/Translator';
 import Profile from './components/Profile';
 import {storage} from './utils/storage';
 import PrivateRoute from './components/hoc/PrivateRoute';
-
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
-  
   const [userName, setUserName] = useState("");
   const [shownUserName, setShownUserName] = useState(storage.getItem("userName"));
 
@@ -19,15 +17,16 @@ function App() {
   }
 
   const handleSubmit = () => {
-    storage.setItem("userName", userName);
+    storage.setItem("userName", userName); //Adds username in local storage
     updateUserName();
   }
 
   const logOut = () => {
-    storage.clear();
+    storage.clear(); //Removes all data from local storage
     updateUserName();
   }
 
+  //Updates username so it's shown/hidden in header without updating page
   const updateUserName = () => {
     setShownUserName(storage.getItem("userName"))
   }
