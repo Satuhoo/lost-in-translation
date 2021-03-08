@@ -8,7 +8,7 @@ const Form = (props) => {
     return(
         <form>
             <FontAwesomeIcon className="icon-keyboard" icon={faKeyboard}/>
-            <input value={props.value} onChange={props.handleChangeValue} placeholder={props.placeholder}/>
+            <input value={props.value} onChange={props.handleChangeValue} placeholder={props.placeholder} maxLength={40}/>
             <Link to={props.path}>
                 <button className="submit-btn" onClick={props.submit}>
                     <FontAwesomeIcon className="icon-arrow" icon={faArrowRight}/>
