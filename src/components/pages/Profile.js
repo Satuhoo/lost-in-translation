@@ -1,9 +1,9 @@
 import {Link} from "react-router-dom";
-import translate from "../utils/translate";
-import {fetchTranslations} from '../utils/storage';
-import {TranslationWithWord} from './translations/Translations';
-import './styles/Profile.css';
-import logoHello from '../assets/Logo-Hello.png';
+import translate from "../../utils/translate";
+import {fetchTranslations} from '../../utils/storage';
+import {TranslationWithWord} from '../translations/Translations';
+import logoHello from '../../assets/Logo-Hello.png';
+import '../styles/Profile.css';
 
 function Profile({logOut}) {
     let storedInputs = fetchTranslations(); //Calls the method which fetchs translations from local storage

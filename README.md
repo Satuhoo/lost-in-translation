@@ -2,7 +2,7 @@
 
 The application which translates entered English words and short sentences to sign language. Requires the username to navigate to translator page. In the profile page is showns the latest ten translations. 
 
-The application uses local storage and it is developed using React.
+The application uses local storage and it is developed by using React.
 
 ## Available Scripts
 

@@ -1,6 +1,6 @@
-import './styles/Login.css';
-import logo from '../assets/Logo.png';
-import Form from './forms/Form';
+import logo from '../../assets/Logo.png';
+import Form from '../forms/Form';
+import '../styles/Login.css';
 
 function Login({userName, onChangeUserName, submit}) {
     return (

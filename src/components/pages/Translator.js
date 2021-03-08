@@ -1,9 +1,9 @@
 import { useState } from "react";
-import {addToStorage} from '../utils/storage';
-import translate from '../utils/translate';
-import {Translation} from './translations/Translations';
-import './styles/Translator.css';
-import Form from './forms/Form';
+import {addToStorage} from '../../utils/storage';
+import translate from '../../utils/translate';
+import {Translation} from '../translations/Translations';
+import Form from '../forms/Form';
+import '../styles/Translator.css';
 
 function Translator() {
     const [inputWord, setInputWord] = useState("");

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Header from './components/Header';
-import Login from './components/Login';
-import Translator from './components/Translator';
-import Profile from './components/Profile';
+import Login from './components/pages/Login';
+import Translator from './components/pages/Translator';
+import Profile from './components/pages/Profile';
 import {storage} from './utils/storage';
 import PrivateRoute from './components/hoc/PrivateRoute';
 import React from "react";
