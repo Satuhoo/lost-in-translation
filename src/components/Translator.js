@@ -19,14 +19,15 @@ function Translator() {
             addToStorage(inputWord);
             let signs = translate(inputWord);
             setTranslation(signs);
-        }   
+        }
+        setInputWord("");
     }
 
     return (
         <div className="translator">
             <div className="form-container-translator">
             <Form value={inputWord} handleChangeValue={handleInputChange} placeholder="Type what you want to translate"
-                submit={handleTranslate}/>
+                submit={handleTranslate} path="#"/>
             </div>
             <div className="translator-box-container">
                 <Signs translation={translation}/>
