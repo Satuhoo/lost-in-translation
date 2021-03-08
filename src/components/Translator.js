@@ -15,9 +15,11 @@ function Translator() {
 
     const handleTranslate = (event) => {
         event.preventDefault();
-        addToStorage(inputWord);
-        let signs = translate(inputWord);
-        setTranslation(signs);
+        if (inputWord !== "") {
+            addToStorage(inputWord);
+            let signs = translate(inputWord);
+            setTranslation(signs);
+        }   
     }
 
     return (
