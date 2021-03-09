@@ -34,3 +34,11 @@
     width: 70px;
     height: 70px;
 }
+
+.translated-word {
+    margin-top: 40px;
+}
+
+.info-msg {
+    margin-bottom: -20px;
+}
