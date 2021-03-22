@@ -1,8 +1,22 @@
 # Lost in Translation
 
-The application which translates entered English words and short sentences to sign language. Requires the username to navigate to translator page. In the profile page is showns the latest ten translations. 
+The application which translates entered English words and short sentences to sign language. It is a single page application and it uses local storage to save information about user and latest translations. It is developed by using React.
 
-The application uses local storage and it is developed by using React.
+## Pages
+
+Navigating between the pages is developed by using react-router. The application requires the username to navigate to translator or profile pages, otherwise it redirects user back to the login page.
+
+### Login page
+
+The login page is displayed to the users who are not logged in the application. After clicking the log in button, the application handles the logging in and checks if the entered username it valid. In this case valid username means something else than empty value. After logging in, the application navigates to the translation page.
+
+### Translation page
+
+The translation page provides to user the opportunity to translate any english words or sentences to sign language. Result is shown in the "translated" box with using sign images. The translator recognize only english letters and if there is numbers or special characters in the input word/sentence, the warning text it shown above the result box. All letters are translated on that word/sentence. 
+
+### Profile page
+
+The translator saves the latest ten translations to local storage and they are shown in the profile page. The page contains also log out button, which clears all data from the local storage and redirects the user back to the login page.
 
 ## Available Scripts
 
